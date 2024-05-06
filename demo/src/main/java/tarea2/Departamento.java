@@ -8,7 +8,7 @@ class Departamento implements Invitable {
     private List<Empleado> empleados;
     private int cantidadEmpleados;
 
-    public Departamento(String nombre, Empleado empleado){
+    public Departamento(String nombre){
         this.nombre = nombre;
         this.empleados = new ArrayList<>();
         cantidadEmpleados = 0;
@@ -19,7 +19,8 @@ class Departamento implements Invitable {
     public int obtenerCantidadEmpleados(){
         return cantidadEmpleados;
     }
-    public void agregarEmpleado(Empleado empleado){
+    public void agregarEmpleado(String nombre, String apellidos, String correo, String id){
+        Empleado empleado = new Empleado(nombre, apellidos, correo, id);
         empleados.add(empleado);
         cantidadEmpleados++;
     }
