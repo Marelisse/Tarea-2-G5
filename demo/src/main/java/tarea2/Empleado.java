@@ -14,8 +14,10 @@ class Empleado implements Invitable{
         this.correo = correo;
         this.id = id;
     }
+    public String getId(){
+        return id;
+    }
     public void invitar(List<Empleado> listaInvitados){
-        Empleado invitado = new Empleado(nombre, apellidos, correo, id);
-        listaInvitados.add(invitado);
+        listaInvitados.add(this);
     }
 }
