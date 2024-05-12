@@ -1,7 +1,7 @@
 package tarea2;
 import java.util.List;
 
-public class ReunionPresencial {
+class ReunionPresencial extends Reunion {
     private String sala;
     public ReunionPresencial(){}
     public List<Empleado> obtenerAsistencias(){return null;};
