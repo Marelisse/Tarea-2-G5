@@ -3,11 +3,12 @@ import java.sql.Date;
 import java.time.Instant;
 import java.util.List;
 
-abstract class Reunion {
+public abstract class Reunion {
     private Date fecha;
     private Instant horaPrevista;
     private Instant horaInicio;
     private Instant horaFin;
+    protected List<Nota> notas;
 
     public Reunion(){}
     public abstract List<Empleado> obtenerAsistencias();
@@ -17,5 +18,7 @@ abstract class Reunion {
     public abstract float obtenerPorcentajeAsistencia();
     public abstract float calcularTiempoReal();
     public abstract void iniciar();
-    public abstract void finalizar(); 
+    public abstract void finalizar();
+    public abstract void crearNota(String contenido); 
+    public abstract List<Nota> obtenerNotas();
 }
