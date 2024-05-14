@@ -1,7 +1,7 @@
 package tarea2;
 import java.util.List;
 
-class ReunionPresencial extends Reunion {
+public class ReunionPresencial extends Reunion {
     private String sala;
     public ReunionPresencial(){}
     public List<Empleado> obtenerAsistencias(){return null;};
@@ -17,9 +17,9 @@ class ReunionPresencial extends Reunion {
     }
     public void crearNota(String contenido){
         Nota nuevaNota = new Nota(contenido);
-        notas.add(nuevaNota);
+        notas.add(nuevaNota.getContenido());
     }
-    public List<Nota> obtenerNotas(){
+    public List<String> obtenerNotas(){
         return notas;
     }
 }

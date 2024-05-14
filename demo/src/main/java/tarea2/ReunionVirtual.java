@@ -1,7 +1,7 @@
 package tarea2;
 import java.util.List;
 
-class ReunionVirtual extends Reunion {
+public class ReunionVirtual extends Reunion {
     private String enlace;
     public ReunionVirtual(){}
     public List<Empleado> obtenerAsistencias(){return null;};
@@ -17,9 +17,9 @@ class ReunionVirtual extends Reunion {
     }
     public void crearNota(String contenido){
         Nota nuevaNota = new Nota(contenido);
-        notas.add(nuevaNota);
+        notas.add(nuevaNota.getContenido());
     }
-    public List<Nota> obtenerNotas(){
+    public List<String> obtenerNotas(){
         return notas;
     }
 }
