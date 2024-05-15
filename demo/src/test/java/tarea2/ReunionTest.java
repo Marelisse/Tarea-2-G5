@@ -15,8 +15,8 @@ class ReunionTest {
     private Reunion reunionPresencial;
     @BeforeEach
     void setUp() {
-        reunionVirtual = new ReunionVirtual();
-        reunionPresencial = new ReunionPresencial();
+        reunionVirtual = new ReunionVirtual(null, null, null);
+        reunionPresencial = new ReunionPresencial(null, null, null);
     }
     @AfterEach
     void tearDown() {
