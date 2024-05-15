@@ -10,6 +10,7 @@ public class Informe {
     private String reunion;
     public Informe(String reunion, Date fecha, String enlaceOSala, Instant horaPrev){
         File archivo = new File("Informe.txt");
+        this.reunion = reunion;
 
         try(BufferedWriter datosReunion = new BufferedWriter(new FileWriter(archivo))){
             if(reunion == "virtual"){
