@@ -16,10 +16,11 @@ public class ReunionPresencial extends Reunion {
         return sala;
     }
     public void crearNota(String contenido){
+        
         Nota nuevaNota = new Nota(contenido);
         notas.add(nuevaNota.getContenido());
     }
-    public List<String> obtenerNotas(){
+    public List<Nota> obtenerNotas(){
         return notas;
     }
 }
