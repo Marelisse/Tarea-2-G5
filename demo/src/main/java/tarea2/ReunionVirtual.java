@@ -16,8 +16,12 @@ public class ReunionVirtual extends Reunion {
     public int obtenerTotalAsistencia(){return 0;};
     public float obtenerPorcentajeAsistencia(){return 0;};
     public float calcularTiempoReal(){return 0;};
-    public void iniciar(){};
-    public void finalizar(){}; 
+    public void iniciar(){
+        this.horaInicio = LocalTime.now();
+    }
+    public void finalizar(){
+        this.horaFin = LocalTime.now();
+    }
     public String getEnlace() {
         return enlace;
     }
