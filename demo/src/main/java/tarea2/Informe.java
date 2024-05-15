@@ -4,11 +4,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Date;
-import java.time.Instant;
+import java.time.LocalTime;
 
 public class Informe {
     private String reunion;
-    public Informe(String reunion, Date fecha, String enlaceOSala, Instant horaPrev){
+    public Informe(String reunion, Date fecha, String enlaceOSala, LocalTime horaPrev){
         File archivo = new File("Informe.txt");
         this.reunion = reunion;
 

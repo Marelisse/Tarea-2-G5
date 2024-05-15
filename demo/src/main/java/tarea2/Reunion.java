@@ -1,13 +1,13 @@
 package tarea2;
 import java.sql.Date;
-import java.time.Instant;
+import java.time.LocalTime;
 import java.util.List;
 
 public abstract class Reunion {
     protected Date fecha;
-    protected Instant horaPrevista;
-    protected Instant horaInicio;
-    protected Instant horaFin;
+    protected LocalTime horaPrevista;
+    protected LocalTime horaInicio;
+    protected LocalTime horaFin;
     protected List<Nota> notas;
 
     public Reunion(){}

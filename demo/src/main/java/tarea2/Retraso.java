@@ -1,13 +1,13 @@
 package tarea2;
-import java.time.Instant;
+import java.time.LocalTime;
 
 
 class Retraso extends Asistencia {
-    private Instant hora;
+    private LocalTime hora;
     public Retraso(){
-        this.hora = Instant.now();
+        this.hora = LocalTime.now();
     }
-    public Instant obtenerHoraRetr(){
+    public LocalTime obtenerHoraRetr(){
         return hora;
     }
 }

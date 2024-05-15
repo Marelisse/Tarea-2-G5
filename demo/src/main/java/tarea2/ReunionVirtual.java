@@ -1,11 +1,11 @@
 package tarea2;
 import java.sql.Date;
-import java.time.Instant;
+import java.time.LocalTime;
 import java.util.List;
 
 public class ReunionVirtual extends Reunion {
     private String enlace;
-    public ReunionVirtual(Date fecha, Instant horaPrevista, String enlace){
+    public ReunionVirtual(Date fecha, LocalTime horaPrevista, String enlace){
         this.fecha = fecha;
         this.horaPrevista = horaPrevista;
         this.enlace = enlace;
@@ -32,7 +32,7 @@ public class ReunionVirtual extends Reunion {
     public Date obtenerFecha(){
         return fecha;
     }
-    public Instant obtenerHoraPrev(){
+    public LocalTime obtenerHoraPrev(){
         return horaPrevista;
     }
 }

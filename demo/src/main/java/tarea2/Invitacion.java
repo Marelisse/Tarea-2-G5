@@ -1,17 +1,17 @@
 package tarea2;
-import java.time.Instant;
+import java.time.LocalTime;
 
 public class Invitacion {
-    private Instant hora;
+    private LocalTime hora;
     private Invitable invitado;
-    public Invitacion(Invitable invitado, Instant hora){
+    public Invitacion(Invitable invitado, LocalTime hora){
         this.invitado = invitado;
         this.hora = hora;
     }
     public Invitable getInvitado(){
         return invitado;
     }
-    public Instant getHora(){
+    public LocalTime getHora(){
         return hora;
     }
 }

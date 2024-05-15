@@ -1,11 +1,11 @@
 package tarea2;
 import java.sql.Date;
-import java.time.Instant;
+import java.time.LocalTime;
 import java.util.List;
 
 public class ReunionPresencial extends Reunion {
     private String sala;
-    public ReunionPresencial(Date fecha, Instant horaPrevista, String sala){
+    public ReunionPresencial(Date fecha, LocalTime horaPrevista, String sala){
         this.fecha = fecha;
         this.horaPrevista = horaPrevista;
         this.sala = sala;
@@ -16,8 +16,12 @@ public class ReunionPresencial extends Reunion {
     public int obtenerTotalAsistencia(){return 0;};
     public float obtenerPorcentajeAsistencia(){return 0;};
     public float calcularTiempoReal(){return 0;};
-    public void iniciar(){};
-    public void finalizar(){}; 
+    public void iniciar(){
+        this.horaInicio = LocalTime.now();
+    }
+    public void finalizar(){
+        this.horaFin = LocalTime.now();
+    } 
     public String getSala() {
         return sala;
     }
@@ -32,7 +36,7 @@ public class ReunionPresencial extends Reunion {
     public Date obtenerFecha(){
         return fecha;
     }
-    public Instant obtenerHoraPrev(){
+    public LocalTime obtenerHoraPrev(){
         return horaPrevista;
     }
 
