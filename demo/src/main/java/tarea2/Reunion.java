@@ -12,7 +12,9 @@ public abstract class Reunion {
     protected List<String> notas;
     protected List<Empleado> listaInvitados;
 
-    public Reunion(){
+    public Reunion(Date fecha, LocalTime horaPrevista){
+        this.fecha = fecha;
+        this.horaPrevista = horaPrevista;
         notas = new ArrayList<String>();
         listaInvitados = new ArrayList<Empleado>();
     }
@@ -26,4 +28,8 @@ public abstract class Reunion {
     public abstract void finalizar();
     public abstract void crearNota(String contenido); 
     public abstract List<String> obtenerNotas();
+    public abstract Date getfecha();
+    public abstract LocalTime gethoraPrevista();
+    public abstract LocalTime gethoraInicio();
+    public abstract String getvirtualoPresencial();
 }

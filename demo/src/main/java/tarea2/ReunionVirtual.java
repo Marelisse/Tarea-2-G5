@@ -6,8 +6,7 @@ import java.util.List;
 public class ReunionVirtual extends Reunion {
     private String enlace;
     public ReunionVirtual(Date fecha, LocalTime horaPrevista, String enlace){
-        this.fecha = fecha;
-        this.horaPrevista = horaPrevista;
+        super(fecha, horaPrevista);
         this.enlace = enlace;
     }
     public List<Empleado> obtenerAsistencias(){return null;};
@@ -32,10 +31,16 @@ public class ReunionVirtual extends Reunion {
     public List<String> obtenerNotas(){
         return notas;
     }
-    public Date obtenerFecha(){
+    public Date getfecha(){
         return fecha;
     }
-    public LocalTime obtenerHoraPrev(){
+    public LocalTime gethoraPrevista(){
         return horaPrevista;
+    }
+    public LocalTime gethoraInicio(){
+        return horaInicio;
+    }
+    public String getvirtualoPresencial(){
+        return "virtual";
     }
 }

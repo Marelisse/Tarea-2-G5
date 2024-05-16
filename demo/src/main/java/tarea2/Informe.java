@@ -8,26 +8,20 @@ import java.time.LocalTime;
 
 public class Informe {
     private String reunion;
-    public Informe(String reunion, Date fecha, String enlaceOSala, LocalTime horaPrev){
+    public Informe(Reunion r, Date fecha, String enlaceOSala, LocalTime horaPrev){
         File archivo = new File("Informe.txt");
-        this.reunion = reunion;
 
         try(BufferedWriter datosReunion = new BufferedWriter(new FileWriter(archivo))){
-            if(reunion == "virtual"){
-                ReunionVirtual rv = new ReunionVirtual(fecha, horaPrev, enlaceOSala);
-                datosReunion.write("Resumen de la Reunion");
-                datosReunion.write("Fecha y hora estipulada: "+ rv.obtenerFecha() + "a las" + rv.obtenerHoraPrev());
-                datosReunion.write("Enlace: "+ rv.getEnlace());
-                datosReunion.write("Lista de participantes : " + rv.obtenerTotalAsistencia());
-                datosReunion.write("Notas: "+ rv.obtenerNotas());
-            }else if(reunion == "presencial"){
-                ReunionPresencial rp = new ReunionPresencial(fecha, horaPrev, enlaceOSala);
-                datosReunion.write("Resumen de la Reunion");
-                datosReunion.write("Fecha y hora estipulada: "+ rp.obtenerFecha() + "a las" + rp.obtenerHoraPrev());
-                datosReunion.write("Sala: "+ rp.getSala());
-                datosReunion.write("Lista de participantes : " + rp.obtenerTotalAsistencia());
-                datosReunion.write("Notas: "+ rp.obtenerNotas());
+            datosReunion.write("Resumen de la Reunion \n");
+            datosReunion.write("Fecha y hora estipulada: "+ r.getfecha() + " a las " + r.gethoraPrevista() + "\n");
+            if (r.getvirtualoPresencial() == "virtual") {
+                datosReunion.write("Enlace: " + enlaceOSala + "\n");
             }
+            else if (r.getvirtualoPresencial() == "presencial"){
+                datosReunion.write("Sala: " + enlaceOSala + "\n");
+            }
+            datosReunion.write("Lista de participantes : " + r.obtenerTotalAsistencia() + "\n");
+            datosReunion.write("Notas: "+ r.obtenerNotas() + "\n");
         }catch(IOException e){
             System.err.println("Error al escribir en el archivo" + e.getMessage());
         }
