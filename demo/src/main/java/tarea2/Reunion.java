@@ -23,24 +23,49 @@ public abstract class Reunion {
         nombresAsistentes = new ArrayList<String>();
         nombresRetrasos = new ArrayList<String>();
     }
-    public abstract List<Empleado> obtenerAsistencias();
-    public abstract List<Empleado> obtenerAusencias();
-    public abstract List<Empleado> obtenerRetrasos();
-    public abstract int obtenerTotalAsistencia();
-    public abstract float obtenerPorcentajeAsistencia();
+    public List<Empleado> obtenerAsistencias(){
+        return null;
+    }
+    public List<Empleado> obtenerAusencias(){
+        return null;
+    }
+    public List<Empleado> obtenerRetrasos(){
+        return null;
+    }
+    public int obtenerTotalAsistencia(){
+        return 0;
+    }
+    public float obtenerPorcentajeAsistencia(){
+        return 0;
+    }
     public abstract float calcularTiempoReal();
-    public abstract void iniciar();
-    public abstract void finalizar();
-    public abstract void crearNota(String contenido); 
-    public abstract List<String> obtenerNotas();
-    public abstract Date getfecha();
-    public abstract LocalTime gethoraPrevista();
-    public abstract LocalTime gethoraInicio();
-    public abstract String getvirtualoPresencial();
+    public void iniciar(){
+        this.horaInicio = LocalTime.now();
+    }
+    public void finalizar(){
+        this.horaFin = LocalTime.now();
+    }
+    public void crearNota(String contenido){
+        Nota nuevaNota = new Nota(contenido);
+        notas.add(nuevaNota.getContenido());
+    } 
+    public List<String> getNotas(){
+        return notas;
+    }
+    public Date getfecha(){
+        return fecha;
+    }
+    public LocalTime gethoraPrevista(){
+        return horaPrevista;
+    }
+    public LocalTime gethoraInicio(){
+        return horaInicio;
+    }
     public List<String> getNombresAsistentes(){
         return nombresAsistentes;
     }
     public List<String> getNombresRetrasos(){
         return nombresRetrasos;
     }
+    public abstract String getvirtualoPresencial();
 }
