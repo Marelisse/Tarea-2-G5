@@ -38,7 +38,9 @@ public abstract class Reunion {
     public float obtenerPorcentajeAsistencia(){
         return 0;
     }
-    public abstract float calcularTiempoReal();
+    public LocalTime calcularTiempoReal(){
+        return horaFin.minusHours(horaInicio.getHour()).minusMinutes(horaInicio.getMinute()).minusSeconds(horaInicio.getSecond());
+    }
     public void iniciar(){
         this.horaInicio = LocalTime.now();
     }

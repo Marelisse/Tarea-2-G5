@@ -9,7 +9,6 @@ public class ReunionVirtual extends Reunion {
         super(fecha, horaPrevista);
         this.enlace = enlace;
     }
-    public float calcularTiempoReal(){return 0;};
     public String getEnlace() {
         return enlace;
     }

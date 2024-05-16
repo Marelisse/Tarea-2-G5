@@ -9,7 +9,6 @@ public class ReunionPresencial extends Reunion {
         super(fecha, horaPrevista);
         this.sala = sala;
     }
-    public float calcularTiempoReal(){return 0;}
     public String getSala() {
         return sala;
     }
