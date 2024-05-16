@@ -26,11 +26,10 @@ public class ReunionVirtual extends Reunion {
         return enlace;
     }
     public void crearNota(String contenido){
-        
         Nota nuevaNota = new Nota(contenido);
-        notas.add(nuevaNota);
+        notas.add(nuevaNota.getContenido());
     }
-    public List<Nota> obtenerNotas(){
+    public List<String> obtenerNotas(){
         return notas;
     }
     public Date obtenerFecha(){

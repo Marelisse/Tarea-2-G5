@@ -1,6 +1,7 @@
 package tarea2;
 import java.sql.Date;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Reunion {
@@ -8,9 +9,11 @@ public abstract class Reunion {
     protected LocalTime horaPrevista;
     protected LocalTime horaInicio;
     protected LocalTime horaFin;
-    protected List<Nota> notas;
+    protected List<String> notas;
 
-    public Reunion(){}
+    public Reunion(){
+        notas = new ArrayList<String>();
+    }
     public abstract List<Empleado> obtenerAsistencias();
     public abstract List<Empleado> obtenerAusencias();
     public abstract List<Empleado> obtenerRetrasos();
@@ -20,5 +23,5 @@ public abstract class Reunion {
     public abstract void iniciar();
     public abstract void finalizar();
     public abstract void crearNota(String contenido); 
-    public abstract List<Nota> obtenerNotas();
+    public abstract List<String> obtenerNotas();
 }
