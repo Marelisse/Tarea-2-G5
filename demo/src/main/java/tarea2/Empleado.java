@@ -17,6 +17,12 @@ class Empleado implements Invitable{
     public String getId(){
         return id;
     }
+    public String getNombre(){
+        return nombre;
+    }
+    public String getApellidos(){
+        return apellidos;
+    }
     public void invitar(List<Empleado> listaInvitados){
         listaInvitados.add(this);
     }

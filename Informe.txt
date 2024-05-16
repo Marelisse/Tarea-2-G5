@@ -1,5 +1,6 @@
 Resumen de la Reunion 
 Fecha y hora estipulada: 2024-05-12 a las 12:00
 Enlace: Enlace
-Lista de participantes : 0
+Lista de Asistentes : [Juan Perez (Puntual) ]
+Lista de Retrasos : [Pedro Gomez (Retraso:12:30) ]
 Notas: []

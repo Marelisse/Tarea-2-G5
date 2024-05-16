@@ -20,7 +20,8 @@ public class Informe {
             else if (r.getvirtualoPresencial() == "presencial"){
                 datosReunion.write("Sala: " + enlaceOSala + "\n");
             }
-            datosReunion.write("Lista de participantes : " + r.obtenerTotalAsistencia() + "\n");
+            datosReunion.write("Lista de Asistentes : " + r.getNombresAsistentes() + "\n");
+            datosReunion.write("Lista de Retrasos : " + r.getNombresRetrasos() + "\n");
             datosReunion.write("Notas: "+ r.obtenerNotas() + "\n");
         }catch(IOException e){
             System.err.println("Error al escribir en el archivo" + e.getMessage());
