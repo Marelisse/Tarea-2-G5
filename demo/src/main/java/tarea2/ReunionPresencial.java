@@ -26,9 +26,8 @@ public class ReunionPresencial extends Reunion {
         return sala;
     }
     public void crearNota(String contenido){
-
         Nota nuevaNota = new Nota(contenido);
-        notas.add(nuevaNota.getContenido());
+        notas.add(nuevaNota);
     }
     public List<Nota> obtenerNotas(){
         return notas;
