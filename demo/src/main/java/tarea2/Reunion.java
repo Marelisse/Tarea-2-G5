@@ -11,26 +11,30 @@ public abstract class Reunion {
     protected LocalTime horaFin;
     protected List<String> notas;
     protected List<Empleado> listaInvitados;
+    protected List<Empleado> listaAsistentes;
+    protected List<Empleado> listaAusentes;
     protected List<String> nombresInvitados;
     protected List<String> nombresAsistentes;
     protected List<String> nombresRetrasos;
+    protected List<String> nombresAusentes;
 
     public Reunion(Date fecha, LocalTime horaPrevista){
         this.fecha = fecha;
         this.horaPrevista = horaPrevista;
         notas = new ArrayList<String>();
         listaInvitados = new ArrayList<Empleado>();
+        listaAusentes = new ArrayList<Empleado>();
         nombresAsistentes = new ArrayList<String>();
         nombresRetrasos = new ArrayList<String>();
-    }
-    public List<Empleado> obtenerAsistencias(){
-        return null;
+        nombresAusentes = new ArrayList<String>();
     }
     public List<Empleado> obtenerAusencias(){
-        return null;
-    }
-    public List<Empleado> obtenerRetrasos(){
-        return null;
+        for (int i = 0; i < listaInvitados.size();i++){
+            if (listaAsistentes.contains(listaInvitados.get(i)) == false && listaAusentes.contains(listaInvitados.get(i)) == false){
+                listaAusentes.add(listaInvitados.get(i));
+            }
+        }
+        return listaAusentes;
     }
     public int obtenerTotalAsistencia(){
         return 0;
@@ -68,6 +72,12 @@ public abstract class Reunion {
     }
     public List<String> getNombresRetrasos(){
         return nombresRetrasos;
+    }
+    public List<String> getNombresAusentes(){
+        for (int i = 0; i < listaAusentes.size(); i++){
+            nombresAusentes.add(listaAusentes.get(i).getNombre() + " " + listaAusentes.get(i).getApellidos());
+        }
+        return nombresAusentes;
     }
     public abstract String getvirtualoPresencial();
 }
