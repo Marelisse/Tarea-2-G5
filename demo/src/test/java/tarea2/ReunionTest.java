@@ -63,8 +63,8 @@ class ReunionTest {
             contenidoP[i] = "Nota Presencial " + i;
             reunionVirtual.crearNota(contenidoV[i]);
             reunionPresencial.crearNota(contenidoP[i]);
-            assertEquals(contenidoV[i], reunionVirtual.obtenerNotas().get(i));
-            assertEquals(contenidoP[i], reunionPresencial.obtenerNotas().get(i));
+            assertEquals(contenidoV[i], reunionVirtual.getNotas().get(i));
+            assertEquals(contenidoP[i], reunionPresencial.getNotas().get(i));
         }
     }
 }
