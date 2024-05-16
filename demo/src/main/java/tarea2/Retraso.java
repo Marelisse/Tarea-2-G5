@@ -8,7 +8,7 @@ class Retraso extends Asistencia {
         super(empleado,reunion);
         this.hora = LocalTime.now();
         reunion.getNombresRetrasos().add(empleado.getNombre() + " " + empleado.getApellidos() + " (Retraso: " + hora.toString() + ") ");
-        reunion.getNombresAsistentes().add(empleado.getNombre() + " " + empleado.getApellidos());
+        reunion.getAsistencia().add(empleado);
     }
     public LocalTime obtenerHoraRetr(){
         return hora;

@@ -24,6 +24,7 @@ public abstract class Reunion {
         notas = new ArrayList<String>();
         listaInvitados = new ArrayList<Empleado>();
         listaAusentes = new ArrayList<Empleado>();
+        listaAsistentes = new ArrayList<Empleado>();
         nombresAsistentes = new ArrayList<String>();
         nombresRetrasos = new ArrayList<String>();
         nombresAusentes = new ArrayList<String>();
@@ -37,10 +38,10 @@ public abstract class Reunion {
         return listaAusentes;
     }
     public int obtenerTotalAsistencia(){
-        return 0;
+        return nombresAsistentes.size();
     }
     public float obtenerPorcentajeAsistencia(){
-        return 0;
+        return (listaAsistentes.size()*100)/listaInvitados.size();
     }
     public LocalTime calcularTiempoReal(){
         return horaFin.minusHours(horaInicio.getHour()).minusMinutes(horaInicio.getMinute()).minusSeconds(horaInicio.getSecond());
@@ -66,6 +67,9 @@ public abstract class Reunion {
     }
     public LocalTime gethoraInicio(){
         return horaInicio;
+    }
+    public List<Empleado> getAsistencia(){
+        return listaAsistentes;
     }
     public List<String> getNombresAsistentes(){
         return nombresAsistentes;
