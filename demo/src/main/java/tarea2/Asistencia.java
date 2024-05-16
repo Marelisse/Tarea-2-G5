@@ -1,4 +1,8 @@
 package tarea2;
+/**
+ * Clase Abstracta que registra las asistencias
+ * @author Ariel Cisternas
+ */
 public abstract class Asistencia {
     protected Empleado empleado;
     protected Reunion reunion;
