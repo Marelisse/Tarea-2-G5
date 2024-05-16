@@ -10,9 +10,11 @@ public abstract class Reunion {
     protected LocalTime horaInicio;
     protected LocalTime horaFin;
     protected List<String> notas;
+    protected List<Empleado> listaInvitados;
 
     public Reunion(){
         notas = new ArrayList<String>();
+        listaInvitados = new ArrayList<Empleado>();
     }
     public abstract List<Empleado> obtenerAsistencias();
     public abstract List<Empleado> obtenerAusencias();

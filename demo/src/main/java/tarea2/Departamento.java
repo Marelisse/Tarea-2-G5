@@ -5,7 +5,7 @@ import java.util.List;
 
 class Departamento implements Invitable {
     private String nombre;
-    private List<Empleado> empleados;
+    protected List<Empleado> empleados;
     private int cantidadEmpleados;
 
     public Departamento(String nombre){
