@@ -5,15 +5,11 @@ public class Nota {
     public Nota(String contenido) {
         this.contenido = contenido;
     }
-    public Nota transformarNota(){
-        return new Nota(contenido);
-    }
-    public Nota getContenido() {
-        Nota nota = transformarNota();
-        return nota;
+    public String getContenido() {
+        return contenido;
     }
     @Override
     public String toString() {
-        return "Nota: "+getContenido();
+        return "Clase que representa una nota con su contenido";
     }
 }
